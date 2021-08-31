@@ -23,5 +23,19 @@ http
                 res.end()
             })
         }
+        
+        if (req.url.includes('/renombrar')) {
+            fs.rename('Repertorio.txt', nombre, (err, data) => {
+                res.write(`Archivo Repertorio.txt renombrado por ${nombre}`)
+                res.end()
+            })
+        }
+
+        if (req.url.includes('/eliminar')) {
+            fs.unlink(nombre, (err, data) => {
+                res.write(`Archivo ${nombre} eliminado con éxito`)
+                res.end()
+         })
+        }
     })
-    .listen(8081, () => console.log('Escuchando el puerto 8081'))
+    .listen(8080, () => console.log('Escuchando el puerto 8080'))
