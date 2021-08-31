@@ -25,7 +25,7 @@ http // creamos el server
             let usuario = users.find((u) => u.rut == params.rut)
 
             usuario
-            ? res.write(`Usuario encontrado
+            ? res.write(`
             Nombre: ${usuario.nombre} -
             Apellido: ${usuario.apellido}`)
             : res.write('No existe ninguna persona registrada con ese RUT')
@@ -33,4 +33,4 @@ http // creamos el server
             res.end()
             
     })
-    .listen(8081, () => console.log('Escuchando el puerto 8080'))
+    .listen(8080, () => console.log('Escuchando el puerto 8080'))
