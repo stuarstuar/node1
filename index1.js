@@ -25,7 +25,7 @@ http
         }
         
         if (req.url.includes('/renombrar')) {
-            fs.rename('Repertorio.txt', nombre, (err, data) => {
+            fs.rename('repertorio', nombre, (err, data) => {
                 res.write(`Archivo Repertorio.txt renombrado por ${nombre}`)
                 res.end()
             })
