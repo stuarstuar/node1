@@ -8,10 +8,12 @@ http
         console.log(req.url)
         const url = req.url
         if (url == '/hoy') {
-
             res.write(`${new Date()}`)
         }
-
+        if (url == '/saludo') {
+            res.write(`Wen gente q tal`)
+        }
+        
         res.end()
     })
     .listen(8080, () => console.log('Escuchando el puerto 8080'))
